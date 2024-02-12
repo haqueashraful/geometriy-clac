@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geometry</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.3/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root{
+            background-color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main class="flex justify-center gap-1 lg:gap-4 w-full p-5">
+      <section
+        class="border-solid border-gray-400 rounded-xl flex-1 grid grid-cols-1 lg:grid-cols-3 gap-3"
+      >
+        <!-- tringle card -->
+        <div class="card card-compactw-80  bg-slate-50 shadow-xl">
+          <figure>
+            <img
+              src="/images/triangle.png"
+              alt="Shoes" class="p-2" 
+            />
+          </figure>
+          <div class="card-body p-2 space-y-2 ">
+            <h2 class="card-title">Triangle!</h2>
+            <p>Area (A) = 0.5 X b X h</p>
+            <div class="flex justify-center items-center gap-4">
+              <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="b" name="" id="tringle-b" />
+              <span>cm</span>
+              <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="h" name="" id="tringle-h" />
+              <span>cm</span>
+            </div>
+            <div class="card-actions justify-end">
+              <button onclick="tringleArea('tringle-b', 'tringle-h')" class="btn border-none outline-none bg-[#1090D8]  text-white w-full">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <!-- rectengle card -->
+        <div class="card card-compactw-80 bg-slate-50 shadow-xl">
+          <figure>
+            <img
+              src="/images/rectangle.png"
+              alt="Shoes" class="p-2"
+            />
+          </figure>
+          <div class="card-body p-2 space-y-2">
+            <h2 class="card-title">Rectangle!</h2>
+            <p>Area (A) = w X l</p>
+            <div class="flex justify-center items-center gap-4">
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="w" name="" id="rectangle-w" />
+                <span>cm</span>
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="l" name="" id="rectangle-l" />
+                <span>cm</span>
+              </div>
+            <div class="card-actions justify-end">
+              <button onclick="RectengleArea('rectangle-w', 'rectangle-l')" class="btn border-none outline-none bg-[#1090D8]  text-white w-full">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <!-- paralleiogram card -->
+        <div class="card card-compactw-80 bg-slate-50 shadow-xl">
+          <figure>
+            <img
+              src="/images/parallelogram.png"
+              alt="Shoes" class="p-2"
+            />
+          </figure>
+          <div class="card-body p-2 space-y-2">
+            <h2 class="card-title">Parallelogram!</h2>
+            <p>Area (A) = b X h</p>
+            <div class="flex justify-center items-center gap-4">
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="b" name="" id="paralleiogram-b" />
+                <span>cm</span>
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="h" name="" id="paralleiogram-h" />
+                <span>cm</span>
+              </div>
+            <div class="card-actions justify-end">
+              <button onclick="Paralleiogram('paralleiogram-b', 'paralleiogram-h')" class="btn border-none outline-none bg-[#1090D8]  text-white w-full">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <!-- rhombus card -->
+        <div class="card card-compactw-80 bg-slate-50 shadow-xl">
+          <figure>
+            <img
+              src="/images/rhombus.png"
+              alt="Shoes" class="p-2"
+            />
+          </figure>
+          <div class="card-body p-2 space-y-2">
+            <h2 class="card-title">Rhombus!</h2>
+            <p>Area (A) = 0.5 X d<sub>1</sub> X d<sub>2</sub></p>
+            <div class="flex justify-center items-center gap-4">
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="d" name="" id="rhombus-d1" />
+                <span>cm</span>
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="d" name="" id="rhombus-d2" />
+                <span>cm</span>
+              </div>
+            <div class="card-actions justify-end">
+              <button onclick="Rhombus('rhombus-d1', 'rhombus-d2')" class="btn border-none outline-none bg-[#1090D8]  text-white w-full">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <!-- pentagon card -->
+        <div class="card card-compactw-80 bg-slate-50 shadow-xl">
+          <figure>
+            <img
+              src="/images/pentagon.png"
+              alt="Shoes" class="p-2"
+            />
+          </figure>
+          <div class="card-body p-2 space-y-2">
+            <h2 class="card-title">Pentagon!</h2>
+            <p>Area (A) = 0.5 X p X b</p>
+            <div class="flex justify-center items-center gap-4">
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="p" name="" id="pentagon-p" />
+                <span>cm</span>
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="b" name="" id="pentagon-b" />
+                <span>cm</span>
+              </div>
+            <div class="card-actions justify-end">
+              <button onclick="Pentagon('pentagon-p', 'pentagon-p')" class="btn border-none outline-none bg-[#1090D8]  text-white w-full">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <!-- ellipse card -->
+        <div class="card card-compactw-80 bg-slate-50 shadow-xl">
+          <figure>
+            <img
+              src="/images/ellipse.png"
+              alt="Shoes" class="p-2"
+            />
+          </figure>
+          <div class="card-body p-2 space-y-2">
+            <h2 class="card-title">Ellipse!</h2>
+            <p>Area (A) = πab</p>
+            <div class="flex justify-center items-center gap-4">
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="a" name="" id="ellipse-a" />
+                <span>cm</span>
+                <input class=" w-3/6 p-1 rounded-md  focus:outline-none bg-white text-black" type="text" placeholder="b" name="" id="ellipse-b" />
+                <span>cm</span>
+              </div>
+            <div class="card-actions justify-end">
+              <button onclick="Ellipse('ellipse-a', 'ellipse-b')" class="btn border-none outline-none bg-[#1090D8]  text-white w-full">Calculate</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="border-gray-600 border rounded-xl  p-5">
+        <h1>Area Collection</h1>
+        <div>
+            <ul id="appendchild">
+                
+            </ul>
+        </div>
+      </section>
+    </main>
+
+
+    <script src="scripts/Tringle.js"></script>
+    <script src="scripts/utilits.js"></script>
+    <script src="scripts/Rectengle.js"></script>
+    <script src="scripts/paralleiogram.js"></script>
+    <script src="scripts/rhombus.js"></script>
+    <script src="scripts/Pentagon.js"></script>
+    <script src="scripts/Ellipse.js"></script>
+  </body>
+</html>
