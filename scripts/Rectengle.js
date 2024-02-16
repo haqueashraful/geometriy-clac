@@ -1,7 +1,9 @@
-function RectengleArea(first,second){
-    let base = getInputFeild(first)
-    let height = getInputFeild(second)
+function RectengleArea(first, second, tId) {
+  let base = getInputField(first);
+  let height = getInputField(second);
 
-    let area =  base * height;
-    setElement("rectengle area", area)
+  let areaFull = base * height;
+  let area = areaFull.toFixed(4);
+
+  setElement("rectengle area", area, tId);
 }
